@@ -1,6 +1,5 @@
 package com.ssl.mina.client;
 
-import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
@@ -12,7 +11,7 @@ import com.ssl.mina.Message;
 import com.ssl.mina.server.ServerHandler;
 
 public class ClientHandler extends IoHandlerAdapter {
-	private final static Logger LOGGER = LoggerFactory.getLogger(ServerHandler.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);
 	private boolean finished;
 	private final int[] values = { 1, 2, 3};
 

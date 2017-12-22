@@ -2,22 +2,18 @@ package com.ssl.mina.client;
 
 import java.net.InetSocketAddress;
 
+import org.apache.log4j.Level;
 import org.apache.mina.core.RuntimeIoException;
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.core.future.ConnectFuture;
-import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
-import org.apache.mina.core.session.IoSessionConfig;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
-import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.filter.ssl.SslFilter;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
 import com.ssl.mina.Message;
 import com.ssl.mina.log.LogConfigurator;
-import com.ssl.mina.server.ServerHandler;
-import com.ssl.mina.server.ServerSSL;
 import com.ssl.mina.ssl.BogusSslContextFactory;
 
 public class Client {
@@ -25,11 +21,11 @@ public class Client {
 	private static final int PORT = 8386;
 
 	/** Set this to true if you want to make the server SSL */
-	private static final boolean USE_SSL = true;
+	private static final boolean USE_SSL = false;
 
 	static {
-		org.apache.log4j.Level level=org.apache.log4j.Level.ALL;
-		String logFile="E:\\Demo\\SSLMINA2.0.16\\client.log";
+		Level level=org.apache.log4j.Level.ALL;
+		String logFile=".\\log\\client.log";
 		LogConfigurator log =new LogConfigurator(logFile,level);
 		log.setUseFileAppender(true);
 		log.setUseLogCatAppender(true);

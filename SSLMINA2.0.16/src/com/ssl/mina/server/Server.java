@@ -20,6 +20,7 @@
 package com.ssl.mina.server;
 
 import java.net.InetSocketAddress;
+import java.nio.charset.Charset;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -27,6 +28,7 @@ import java.util.logging.Level;
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
+import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.executor.ExecutorFilter;
 import org.apache.mina.filter.ssl.SslFilter;
 import org.apache.mina.transport.socket.SocketAcceptor;
@@ -48,7 +50,7 @@ public class Server {
 	private static final boolean USE_SSL = true;
 	static {
 		org.apache.log4j.Level level=org.apache.log4j.Level.ALL;
-		String logFile="E:\\Demo\\SSLMINA2.0.16\\server.log";
+		String logFile=".\\log\\server.log";
 		LogConfigurator log =new LogConfigurator(logFile,level);
 		log.setUseFileAppender(true);
 		log.setUseLogCatAppender(true);
@@ -64,8 +66,13 @@ public class Server {
 			//addSSLSupport(chain);
 			addSSLContext(chain);
 		}
-		 acceptor.getFilterChain().addLast("codec",
-		 new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
+//		 ObjectSerializationCodecFactory factory = new ObjectSerializationCodecFactory();
+//	        factory.setDecoderMaxObjectSize(Integer.MAX_VALUE);
+//	        factory.setEncoderMaxObjectSize(Integer.MAX_VALUE);
+//	        
+//		 acceptor.getFilterChain().addLast("codec",
+//		 new ProtocolCodecFilter(factory));
+		    acceptor.getFilterChain().addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
 		 //acceptor.getFilterChain().addLast("threaddPool", new ExecutorFilter(Executors.newCachedThreadPool()));
 		// Bind
 		acceptor.setHandler(new ServerHandler());
