@@ -8,7 +8,7 @@ client demo
 
 Android demo(跟进中...)
 
-# 参考
+## 参考
 
 [mina 官方文档](http://mina.apache.org/mina-project/userguide/ch2-basics/sample-tcp-client.html)
 
