@@ -22,6 +22,6 @@ Android demo(跟进中...)
 
 [openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
 
-[portecle使用教学视频]（https://www.youtube.com/watch?v=nSqKv7VlMcg）
+[portecle使用教学视频](https://www.youtube.com/watch?v=nSqKv7VlMcg)
 
 
