@@ -20,8 +20,11 @@ Android demo(跟进中...)
 
 [portecle使用文档](http://portecle.sourceforge.net/howtos.html)
 
-[openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
+
+[KEYTOOL和PORTECLE介绍](http://alanzhang.me/2014/12/31/KEYTOOL%E5%92%8CPORTECLE%E4%BB%8B%E7%BB%8D/)
 
 [portecle使用教学视频](https://www.youtube.com/watch?v=nSqKv7VlMcg)
+
+[openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
 
 
