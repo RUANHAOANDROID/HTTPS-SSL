@@ -28,3 +28,22 @@ Android demo(跟进中...)
 [openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
 
 
+# 创建证书过程
+1.创建客户端jks serverkey
+
+2.从客户端到处证书文件cer server.cer
+
+3.创建客户端jks clientkey.jks
+
+4.从客户端到处cer client.cer
+
+5.把server.cer 倒入到clienttrust.jks
+
+6.把client.cer 导入到servertrust.jks
+
+7.把client.jks 转换为 aclient.bks
+
+8.把clienttrust.jks转换为aclienttrust.bks
+
+
+
