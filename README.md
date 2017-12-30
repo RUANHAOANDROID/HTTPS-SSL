@@ -28,7 +28,7 @@ Android demo(跟进中...)
 [openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
 
 
-## 创建证书过程
+## 双向认证创建证书过程
 1.创建服务端证书serverkey.jks
 
 2.从服务端证书导出 server.cer
@@ -45,10 +45,8 @@ Android demo(跟进中...)
 
 8.把clienttrust.jks转换为aclienttrust.bks
 
-
-Mac
-bc库配置坑
+# BC库注意事项
 
 /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/security
 
-该路径下配置Java.security 更改RSA size,配置bc库
+该路径下配置Java.security文本 更改RSA 适配相应size、配置bc库
