@@ -54,3 +54,48 @@ Android demo(跟进中...)
 [portecle使用教学视频](https://www.youtube.com/watch?v=nSqKv7VlMcg)
 
 [openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
+
+[Google Dev Android Https/SSL](https://developer.android.com/training/articles/security-ssl.html)
+
+#Android支持版本参考
+
+<table>
+   <thead>
+     <tr>
+       <th>Algorithm</th>
+       <th>Supported API Levels</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>Default</td>
+       <td>10+</td>
+     </tr>
+     <tr>
+       <td>SSL</td>
+       <td>10+</td>
+     </tr>
+     <tr class="deprecated">
+       <td>SSLv3</td>
+       <td>10-25</td>
+     </tr>
+     <tr>
+       <td>TLS</td>
+       <td>1+</td>
+     </tr>
+     <tr>
+       <td>TLSv1</td>
+       <td>10+</td>
+     </tr>
+     <tr>
+       <td>TLSv1.1</td>
+       <td>16+</td>
+     </tr>
+     <tr>
+       <td>TLSv1.2</td>
+       <td>16+</td>
+     </tr>
+   </tbody>
+ </table>
+
+
