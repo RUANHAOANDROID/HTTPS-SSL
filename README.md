@@ -28,7 +28,7 @@ Android demo(跟进中...)
 
 8.把clienttrust.jks转换为aclienttrust.bks
 
-# BC库注意事项
+## BC库注意事项
 
 /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/security
 
