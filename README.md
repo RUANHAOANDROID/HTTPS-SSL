@@ -46,4 +46,9 @@ Android demo(跟进中...)
 8.把clienttrust.jks转换为aclienttrust.bks
 
 
+Mac
+bc库配置坑
 
+/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/security
+
+该路径下配置Java.security 更改RSA size,配置bc库
