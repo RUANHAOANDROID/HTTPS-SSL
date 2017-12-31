@@ -6,11 +6,43 @@ server demo
 
 client demo
 
-Android demo(跟进中...)
+Android demo
 
 
 ## 双向认证创建证书过程
 1.创建服务端证书serverkey.jks
+
+keytool -genkey -alias serverkey -keyalg RSA -keystore serverkey.jks -keysize 2048
+
+输入密钥库口令:  
+
+再次输入新口令: 
+
+您的名字与姓氏是什么?
+
+  [Unknown]:  rh
+  
+您的组织单位名称是什么?
+
+  [Unknown]:  unistrong
+  
+您的组织名称是什么?
+
+  [Unknown]:  unistrong
+  
+您所在的城市或区域名称是什么?
+
+  [Unknown]:  sh
+  
+您所在的省/市/自治区名称是什么?
+
+  [Unknown]:  sh
+  
+该单位的双字母国家/地区代码是什么?
+
+  [Unknown]:  cn
+  
+
 
 2.从服务端证书导出 server.cer
 
