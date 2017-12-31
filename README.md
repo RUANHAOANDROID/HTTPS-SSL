@@ -103,7 +103,8 @@ Android demo(跟进中...)
 
 # 爬坑指南
 
-ava.lang.IllegalArgumentException
+### ava.lang.IllegalArgumentException
+
    org.apache.mina.util.DefaultExceptionMonitor(1806): Caused by: java.lang.IllegalArgumentException: TLS_ECDH_ECDSA_WITH_RC4_128_SHA is not supported.
 
 参照对照表找对应机型支持的密码套件
