@@ -27,7 +27,6 @@ Android example
 ```
 keytool -genkey -alias serverkey -keyalg RSA -keystore serverkey.jks -keysize 2048
 
-CN=rh, OU=unistrong, O=unistrong, L=sh, ST=sh, C=cn
 ```
 
 2.从服务端证书导出 server.cer
@@ -42,7 +41,6 @@ keytool -export -alias serverkey -keystore serverkey.jks -file server.cer
 ```
 keytool -genkey -alias clientkey -keyalg RSA -keystore clientkey.jks -keysize 2048
 
-CN=rh, OU=unistrong, O=unistrong, L=sh, ST=sh, C=cn
 ```
 
 4.从客户端导出cer client.cer
