@@ -9,30 +9,55 @@ client demo
 Android demo
 
 
-## 双向认证创建证书过程
-1.创建服务端证书serverkey.jks
+## 证书创建过程
 
-...
+### Java Server and Client App
+1. 创建服务器证书
+
+```
 keytool -genkey -alias serverkey -keyalg RSA -keystore serverkey.jks -keysize 2048
-...
 
 CN=rh, OU=unistrong, O=unistrong, L=sh, ST=sh, C=cn
+```
 
 2.从服务端证书导出 server.cer
 
+```
+keytool -export -alias serverkey -keystore serverkey.jks -file server.cer
+```
+
+
 3.创建客户端jks clientkey.jks
+
+```
+keytool -genkey -alias clientkey -keyalg RSA -keystore clientkey.jks -keysize 2048
+
+CN=rh, OU=unistrong, O=unistrong, L=sh, ST=sh, C=cn
+```
 
 4.从客户端导出cer client.cer
 
+```
+keytool -export -alias clientkey -keystore clientkey.jks -file client.cer
+```
+
 5.把server.cer 导入到clienttrust.jks
+
+```
+keytool -import -alias serverkey -keystore clienttrust.jks -file server.cer
+```
 
 6.把client.cer 导入到servertrust.jks
 
-### Android
+```
+keytool -import -alias clientkey -keystore servertrust.jks -file client.cer
+```
+### Android app
 
-7.把client.jks 转换为 aclient.bks
+7.转换clientkey.jks为clientkey.bks(  [使用Portec工具](http://portecle.sourceforge.net/)、[使用文档](http://portecle.sourceforge.net/howtos.html))
 
-8.把clienttrust.jks转换为aclienttrust.bks
+8.转换clienttrust.jks 为 clienttrust.bks（同步骤7）
+
 
 ## BC库注意事项
 
