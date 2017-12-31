@@ -120,13 +120,14 @@ keytool -import -alias clientkey -keystore servertrust.jks -file client.cer
 
 ## 爬坑指南
 
-#### ava.lang.IllegalArgumentException
+#### java.lang.IllegalArgumentException
 ```
    org.apache.mina.util.DefaultExceptionMonitor(1806): Caused by: java.lang.IllegalArgumentException: TLS_ECDH_ECDSA_WITH_RC4_128_SHA is not supported.
-   
-   [参照Google Android Cipher suites](https://developer.android.com/reference/javax/net/ssl/SSLEngine.html)
+  
 ```
+[参照Google Android Cipher suites](https://developer.android.com/reference/javax/net/ssl/SSLEngine.html)
 
+---
 
 ## 参考
 
