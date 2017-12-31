@@ -1,12 +1,24 @@
-# Mina-SSL
+# 示例中包含
 
-[web https demo](https://github.com/RUANHAOANDROID/SpringBootDemo)
+[Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo)
 
-server demo
+Server example
 
-client demo
+Client example
 
-Android demo
+Android example
+
+## SSL/TLS概念以及应用了解
+
+以其昏昏，使人昭昭，这怎么成呢，如果首次了解SSL/TLS请自行翻阅了解
+
+[SSL/TLS 维基百科](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)
+
+[JSEE](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#SSLContext)
+
+[openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
+
+[keytool](https://docs.oracle.com/javase/6/docs/technotes/tools/solaris/keytool.html)
 
 
 ## 证书创建过程
@@ -66,32 +78,7 @@ keytool -import -alias clientkey -keystore servertrust.jks -file client.cer
 
 该路径下配置Java.security文本 更改RSA 适配相应size、配置bc库
 
-
-
-## 参考
-
-[mina 官方文档](http://mina.apache.org/mina-project/userguide/ch2-basics/sample-tcp-client.html)
-
-[Java Secure Socket Extension (JSSE) Reference Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#SSLContext)
-
-[Netty使用JSSE实现SSLSocket通信](https://segmentfault.com/a/1190000010054860)
-
-[Mina使用SSL结合android客户端SSL](http://blog.sina.com.cn/s/blog_49b531af0102v5g8.html)
-
-[portecle使用文档](http://portecle.sourceforge.net/howtos.html)
-
-
-[KEYTOOL和PORTECLE介绍](http://alanzhang.me/2014/12/31/KEYTOOL%E5%92%8CPORTECLE%E4%BB%8B%E7%BB%8D/)
-
-[portecle使用教学视频](https://www.youtube.com/watch?v=nSqKv7VlMcg)
-
-[openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
-
-[Google Dev Android Https/SSL](https://developer.android.com/training/articles/security-ssl.html)
-
-[Google Dev Android SSLContext参考](https://developer.android.com/reference/javax/net/ssl/SSLContext.html)
-
-#Android支持的协议以及版本
+## Android支持的协议以及版本
 
 <table>
    <thead>
@@ -140,4 +127,24 @@ keytool -import -alias clientkey -keystore servertrust.jks -file client.cer
    org.apache.mina.util.DefaultExceptionMonitor(1806): Caused by: java.lang.IllegalArgumentException: TLS_ECDH_ECDSA_WITH_RC4_128_SHA is not supported.
 
 [参照Google Android Cipher suites](https://developer.android.com/reference/javax/net/ssl/SSLEngine.html)
+
+## 参考
+
+[mina 官方文档](http://mina.apache.org/mina-project/userguide/ch2-basics/sample-tcp-client.html)
+
+[Java Secure Socket Extension (JSSE) Reference Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#SSLContext)
+
+[Netty使用JSSE实现SSLSocket通信](https://segmentfault.com/a/1190000010054860)
+
+[portecle使用文档](http://portecle.sourceforge.net/howtos.html)
+
+[KEYTOOL和PORTECLE介绍](http://alanzhang.me/2014/12/31/KEYTOOL%E5%92%8CPORTECLE%E4%BB%8B%E7%BB%8D/)
+
+[portecle使用教学视频](https://www.youtube.com/watch?v=nSqKv7VlMcg)
+
+[openssl](https://www.openssl.org/docs/manmaster/man1/openssl.html)
+
+[Google Dev Android Https/SSL](https://developer.android.com/training/articles/security-ssl.html)
+
+[Google Dev Android SSLContext参考](https://developer.android.com/reference/javax/net/ssl/SSLContext.html)
 
