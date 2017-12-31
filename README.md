@@ -1,4 +1,4 @@
-# 示例中包含
+# 示例包含
 
 [Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo)
 
@@ -8,9 +8,7 @@ Client example
 
 Android example
 
-## SSL/TLS概念以及应用了解
-
-以其昏昏，使人昭昭，这怎么成呢，如果首次了解SSL/TLS请自行翻阅了解
+## SSL/TLS概念以及应用参阅
 
 [SSL/TLS 维基百科](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)
 
@@ -23,7 +21,7 @@ Android example
 
 ## 证书创建过程
 
-### Java Server and Client App
+#### Java Server and Client App
 1. 创建服务器证书
 
 ```
@@ -120,13 +118,15 @@ keytool -import -alias clientkey -keystore servertrust.jks -file client.cer
  </table>
 
 
-# 爬坑指南
+## 爬坑指南
 
-### ava.lang.IllegalArgumentException
-
+#### ava.lang.IllegalArgumentException
+```
    org.apache.mina.util.DefaultExceptionMonitor(1806): Caused by: java.lang.IllegalArgumentException: TLS_ECDH_ECDSA_WITH_RC4_128_SHA is not supported.
+   
+   [参照Google Android Cipher suites](https://developer.android.com/reference/javax/net/ssl/SSLEngine.html)
+```
 
-[参照Google Android Cipher suites](https://developer.android.com/reference/javax/net/ssl/SSLEngine.html)
 
 ## 参考
 
