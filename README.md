@@ -58,6 +58,7 @@ keytool -import -alias clientkey -keystore servertrust.jks -file client.cer
 
 8.转换clienttrust.jks 为 clienttrust.bks（同步骤7）
 
+> 注：也可以在不使用Portecle工具的情况下使用BC命令行，[参照这篇netty 双向SSL/TLS双向认证]（https://www.cnblogs.com/wangshen/p/5956854.html)
 
 ## BC库注意事项
 
