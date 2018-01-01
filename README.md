@@ -9,21 +9,19 @@
 
 ## 示例包含
 
-#### [Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo) <br>
+### [Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo) <br>
  
  Web HTTPS example 在另外一个工程中 <br>
 
-#### Server and Client example <br>
-
+### Server and Client example <br>
 SSLMINA2.0.16 src 目录结构 <br>
-
 >├ client -- Java 客户端包 包含Client.java main 程序 <br>
 >├ log -- log4j相应包 <br>
 >├ ssl -- mina示例Bogus存放包 <br>
 >├ server -- Java 服务端 包含Server.java main程序 <br>
 >├ message.java -- 闲置的传输对象 <br>
    
-#### Android example
+### Android example
 
  Android版本 5.11 / 7.0 
  
