@@ -29,7 +29,7 @@ SSLMINA2.0.16 src 目录结构 <br>
    
 > 注：Android不同版本对证书加密强度以及算法有要求，具体参照 Google Android “Cipher suites”
 
-以上示例程序在相应环境下可以直接运行
+以上示例程序在相应环境下可以直接运行，遇到问题提交到“issues”
 
 
 ## SSL/TLS概念以及应用参阅
