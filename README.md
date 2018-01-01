@@ -1,14 +1,26 @@
-# 示例包含
+## 目录结构
 
-[Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo)
+根目录 <br>
+>├ SSLMINA2.0.16 --mina java 客户端和服务端程序 <br> 
+>├ SSLMinaAndroid --Android程序 <br>
+>├ README.md --阅览文件 <br>
+>├ bcprov-jdk15on-158.jar BC Jar <br>
+>├ portecle-1.11.zip --证书管理以及转换工具 <br>
 
-#### Server example
+## 示例包含
 
- java 8 
-   
-#### Client example
+#### [Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo)
+ 
+ Web HTTPS example 在另外一个工程中
 
- java 8 
+#### Server and Client example
+
+SSLMINA2.0.16 src 目录结构 <br>
+>├ client -- Java 客户端包 包含Client.java main 程序 <br>
+>├ log -- log4j相应包 <br>
+>├ ssl -- mina示例Bogus存放包 <br>
+>├ server -- Java 服务端 包含Server.java main程序 <br>
+>├ message.java -- 闲置的传输对象 <br>
    
 #### Android example
 
@@ -17,6 +29,8 @@
  测试机：HUWEI Mate 8 ,UniStrong HD508
    
 > 注：Android不同版本对证书加密强度以及算法有要求，具体参照 Google Android “Cipher suites”
+
+以上示例程序在相应环境下可以直接运行
 
 
 ## SSL/TLS概念以及应用参阅
