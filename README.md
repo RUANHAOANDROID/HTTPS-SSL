@@ -32,7 +32,7 @@ SSLMINA2.0.16 src 目录结构 <br>
 以上示例程序在相应环境下可以直接运行，遇到问题提交到“issues”
 
 
-## SSL/TLS概念以及应用参阅
+## SSL/TLS概念以及应用
 
 [SSL/TLS 维基百科](https://zh.wikipedia.org/wiki/%E5%82%B3%E8%BC%B8%E5%B1%A4%E5%AE%89%E5%85%A8%E6%80%A7%E5%8D%94%E5%AE%9A)
 
