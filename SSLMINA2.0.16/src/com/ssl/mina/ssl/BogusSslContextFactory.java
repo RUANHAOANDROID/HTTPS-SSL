@@ -14,7 +14,7 @@ public class BogusSslContextFactory {
 	/**
 	 * Protocol to use.
 	 */
-	private static final String PROTOCOL = "TLSv1.2";
+	private static final String PROTOCOL = "TLS";
 
 	private static final String KEY_MANAGER_FACTORY_ALGORITHM;
 

@@ -8,13 +8,13 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 
 public class ClientSSL {
-	//	private static final String PROTOCOL = "TLSv1.2";
-	private static final String PROTOCOL = "SSL";
+	private static final String PROTOCOL = "TLSv1.2";
+	//private static final String PROTOCOL = "SSL";
 	private static final SSLContext CLIENT_CONTEXT;
-	private static String CLIENT_KEY_STORE = ".\\ssl\\sslclientkeys";
-	private static String CLIENT_TRUST_KEY_STORE = ".\\ssl\\sslclienttrust";
-	private static String CLIENT_KEY_STORE_PASSWORD = "unistrong123456";
-	private static String CLIENT_TRUST_KEY_STORE_PASSWORD = "unistrong123456";
+	private static String CLIENT_KEY_STORE = "./ssl/clientkey.jks";
+	private static String CLIENT_TRUST_KEY_STORE = "./ssl/clienttrust.jks";
+	private static String CLIENT_KEY_STORE_PASSWORD = "u123456";
+	private static String CLIENT_TRUST_KEY_STORE_PASSWORD = "u123456";
 	static {
 		String algorithm = System.getProperty("ssl.KeyManagerFactory.algorithm");
 		if (algorithm == null) {

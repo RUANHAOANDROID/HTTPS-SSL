@@ -13,7 +13,7 @@ import com.ssl.mina.server.ServerHandler;
 public class ClientHandler extends IoHandlerAdapter {
 	private final static Logger LOGGER = LoggerFactory.getLogger(ClientHandler.class);
 	private boolean finished;
-	private final int[] values = { 1, 2, 3};
+	private final int[] values = { 1, 2, 3 };
 
 	public ClientHandler() {
 	}
@@ -41,11 +41,7 @@ public class ClientHandler extends IoHandlerAdapter {
 	public void sessionOpened(IoSession session) throws Exception {
 		LOGGER.info("OPENED");
 		System.out.println("OPENED");
-		for (int i = 0; i < values.length; i++) {
-			Message m = new Message();
-			m.setValue(values[i]);
-			session.write(m);
-		}
+		session.write("helloserver_sessionOpened");
 	}
 
 	@Override
@@ -56,14 +52,14 @@ public class ClientHandler extends IoHandlerAdapter {
 
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) {
-		 session.closeNow();
-
+		session.closeNow();
+		System.out.println(cause);
 	}
 
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
 		LOGGER.info("Received : " + message);
-		session.write(new Message());
+		session.write("hello_server");
 		System.out.println("Received : " + message);
 	}
 }

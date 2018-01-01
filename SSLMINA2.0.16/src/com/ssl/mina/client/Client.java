@@ -1,6 +1,7 @@
 package com.ssl.mina.client;
 
 import java.net.InetSocketAddress;
+import java.nio.charset.Charset;
 
 import org.apache.log4j.Level;
 import org.apache.mina.core.RuntimeIoException;
@@ -9,6 +10,7 @@ import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
+import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.ssl.SslFilter;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
@@ -21,11 +23,11 @@ public class Client {
 	private static final int PORT = 8386;
 
 	/** Set this to true if you want to make the server SSL */
-	private static final boolean USE_SSL = false;
+	private static final boolean USE_SSL = true;
 
 	static {
-		Level level=org.apache.log4j.Level.ALL;
-		String logFile=".\\log\\client.log";
+		Level level=org.apache.log4j.Level.DEBUG;
+		String logFile="./log/client.log";
 		LogConfigurator log =new LogConfigurator(logFile,level);
 		log.setUseFileAppender(true);
 		log.setUseLogCatAppender(true);
@@ -43,9 +45,7 @@ public class Client {
 			addSSLContext(chain);
 			
 		}
-		connector.getFilterChain().addLast("codec",
-	            new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
-	
+		connector.getFilterChain().addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
 		// Bind
 		connector.setHandler(new ClientHandler());
 
@@ -57,9 +57,8 @@ public class Client {
 				session = future.getSession();
 				
 				if (session.isConnected()) {
-					Message msg = new Message();
-					msg.setValue(110);
-					session.write(msg);
+					
+					session.write("java client : hello");
 				}
 				
 				break;
@@ -83,7 +82,7 @@ public class Client {
 	private static void addSSLContext(DefaultIoFilterChainBuilder chain) {
 		SslFilter sslFilter = new SslFilter(ClientSSL.getClientContext());
 		sslFilter.setUseClientMode(true);
-		chain.addLast("sslFilter", sslFilter);
+		chain.addLast("SSL", sslFilter);
 		System.out.println("SSL ON");
 	}
 }

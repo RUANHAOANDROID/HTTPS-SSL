@@ -43,37 +43,38 @@ import com.ssl.mina.ssl.BogusSslContextFactory;
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
 public class Server {
-	/** 选择一个端口 */
+	/** Choose your favorite port number.  */
 	private static final int PORT = 8386;
 
 	/** Set this to true if you want to make the server SSL */
 	private static final boolean USE_SSL = true;
 	static {
-		org.apache.log4j.Level level=org.apache.log4j.Level.ALL;
-		String logFile=".\\log\\server.log";
-		LogConfigurator log =new LogConfigurator(logFile,level);
+		org.apache.log4j.Level level = org.apache.log4j.Level.DEBUG;
+		String logFile = "./log/server.log";
+		LogConfigurator log = new LogConfigurator(logFile, level);
 		log.setUseFileAppender(true);
 		log.setUseLogCatAppender(true);
 		log.setImmediateFlush(true);
 		log.configure();
 	}
+
 	public static void main(String[] args) throws Exception {
 		SocketAcceptor acceptor = new NioSocketAcceptor();
 		acceptor.setReuseAddress(true);
+		acceptor.getSessionConfig().setReadBufferSize(1024);
 		DefaultIoFilterChainBuilder chain = acceptor.getFilterChain();
 		// Add SSL filter if SSL is enabled.
 		if (USE_SSL) {
-			//addSSLSupport(chain);
 			addSSLContext(chain);
+			// addSSLContext(chain);
 		}
-//		 ObjectSerializationCodecFactory factory = new ObjectSerializationCodecFactory();
-//	        factory.setDecoderMaxObjectSize(Integer.MAX_VALUE);
-//	        factory.setEncoderMaxObjectSize(Integer.MAX_VALUE);
-//	        
-//		 acceptor.getFilterChain().addLast("codec",
-//		 new ProtocolCodecFilter(factory));
-		    acceptor.getFilterChain().addLast("codec", new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
-		 //acceptor.getFilterChain().addLast("threaddPool", new ExecutorFilter(Executors.newCachedThreadPool()));
+
+		TextLineCodecFactory textLineCodecFactory =new TextLineCodecFactory(Charset.forName("UTF-8"));
+		textLineCodecFactory.setDecoderMaxLineLength(Integer.MAX_VALUE);
+		textLineCodecFactory.setEncoderMaxLineLength(Integer.MAX_VALUE);
+		acceptor.getFilterChain().addLast("codec",
+				new ProtocolCodecFilter(textLineCodecFactory));
+
 		// Bind
 		acceptor.setHandler(new ServerHandler());
 		acceptor.bind(new InetSocketAddress(PORT));
@@ -83,7 +84,7 @@ public class Server {
 		for (;;) {
 			System.out.println("R: " + acceptor.getStatistics().getReadBytesThroughput() + ", W: "
 					+ acceptor.getStatistics().getWrittenBytesThroughput());
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		}
 	}
 
@@ -95,7 +96,7 @@ public class Server {
 
 	private static void addSSLContext(DefaultIoFilterChainBuilder chain) {
 		SslFilter sslFilter = new SslFilter(ServerSSL.getServerContext());
-		chain.addLast("sslFilter", sslFilter);
+		chain.addLast("SSL", sslFilter);
 		System.out.println("SSL ON");
 	}
 }
