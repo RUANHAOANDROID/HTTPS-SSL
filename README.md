@@ -2,11 +2,16 @@
 
 [Web HTTPS example](https://github.com/RUANHAOANDROID/SpringBootDemo)
 
-Server example
+#### Server example
+   java 8 
+#### Client example
+   java 8 
+#### Android example
+   Android版本 5.11 / 7.0 
+   测试机：HUWEI Mate 8 ,UniStrong HD508
+   
+> 注：Android不同版本对证书加密强度以及算法有要求，具体参照 Google Android “Cipher suites”
 
-Client example
-
-Android example
 
 ## SSL/TLS概念以及应用参阅
 
