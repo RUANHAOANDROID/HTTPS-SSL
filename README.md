@@ -12,9 +12,9 @@
    
 #### Android example
 
-   Android版本 5.11 / 7.0 
-   
-   测试机：HUWEI Mate 8 ,UniStrong HD508
+ Android版本 5.11 / 7.0 
+ 
+ 测试机：HUWEI Mate 8 ,UniStrong HD508
    
 > 注：Android不同版本对证书加密强度以及算法有要求，具体参照 Google Android “Cipher suites”
 
