@@ -71,7 +71,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.ssl.example.mina.MyService" >
+        <service android:name="com.ssl.example.MyService" >
         </service>
     </application>
 

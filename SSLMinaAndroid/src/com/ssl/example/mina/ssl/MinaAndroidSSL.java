@@ -28,7 +28,7 @@ import android.util.Log;
  */
 
 public class MinaAndroidSSL {
-	 private static final String PROTOCOL = "TLSv1.2";// 我是坑
+	 private static final String PROTOCOL = "TLSv1.2";
 	 //private static final String PROTOCOL = "TLS";
 
 	public static SSLContext getClientContext(Context c) {
