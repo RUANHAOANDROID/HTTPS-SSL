@@ -1,13 +1,16 @@
 package com.ssl.example;
 
 import com.example.sslminaandroid.R;
-import com.ssl.example.mina.MyService;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-
+/**
+ * 
+ * @author rh
+ *
+ */
 public class MainActivity extends Activity {
 
 	private TextView mTextMessage;

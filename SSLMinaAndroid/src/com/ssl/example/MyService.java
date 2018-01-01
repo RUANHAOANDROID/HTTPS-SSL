@@ -1,4 +1,6 @@
-package com.ssl.example.mina;
+package com.ssl.example;
+
+import com.ssl.example.mina.MinaClient;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,7 +10,7 @@ import android.os.IBinder;
  * Created by hao.ruan on 2017/12/21.
  */
 
-public class MinaService extends Service {
+public class MyService extends Service {
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -22,7 +24,7 @@ public class MinaService extends Service {
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				new MinaAndroid();
+				new MinaClient();
 			}
 		});
 		thread.start();
