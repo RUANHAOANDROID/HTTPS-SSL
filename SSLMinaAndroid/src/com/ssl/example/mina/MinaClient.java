@@ -28,7 +28,7 @@ public class MinaClient {
 	
 	// private static final String IP="10.0.2.2";//模拟器
 	
-	private static final String IP = "192.168.0.106";//填写Server IP
+	private static final String IP = "填写Server IP";//填写Server IP
 	
 	/** Set this to true if you want to make the server SSL */
 	private static final boolean USE_SSL = true;
